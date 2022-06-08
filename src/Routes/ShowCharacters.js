@@ -9,17 +9,17 @@ function ShowCharacters(props) {
     const characters = user.data[0].characters.map((value, index) => {
         console.log(value.class)
         return(
-             value.characterName,
-              value.class
+            <div>
+                <h1>{value.characterName}</h1>
+                <h1>{value.class}</h1>
+             </div>
              )
     })
 
     console.log(characters[0])
     return(
         <div>
-        {characters.map((item) => {
-            <h1>{item}</h1>
-        })}
+        {characters}
         </div>
     )
 }
