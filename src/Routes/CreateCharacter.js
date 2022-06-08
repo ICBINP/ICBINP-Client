@@ -2,9 +2,20 @@ import { useState } from "react"
 
 const CreateCharacter = () => {
     const [newCharacter, setNewCharacter] = useState({})
-    const handleClassClick = () => {
-        setNewCharacter({class: ""})
+
+    const handleClassClick = (e) => {
+        setNewCharacter({class: e.target.innerText})
+        console.log(e)
     }
+
+    const handleAlignmentClick = (e) => {
+        setNewCharacter({alignment: ""})
+    }
+
+    const handleWeaponClick = (e) => {
+        setNewCharacter({weapon: ""})
+    }
+
     console.log(newCharacter)
     return (
         <div>
@@ -18,26 +29,26 @@ const CreateCharacter = () => {
                     </div>
                     <p>Choose your Class</p>
                     <div className="Class">
-                        <button className="dd-list-item" onClick={handleClick}>Orc</button>
-                        <button className="dd-list-item">Elf</button>
-                        <button className="dd-list-item">Dwarf</button>
-                        <button className="dd-list-item">Wizard</button>
-                        <button className="dd-list-item">Pineapple</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Orc</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Elf</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Dwarf</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Wizard</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Pineapple</button>
                     </div>
-                    <p>Choose your Allignment</p>
+                    <p>Choose your Alignment</p>
                     <div className="Allignment">
-                        <button className="dd-list-item">Good</button>
-                        <button className="dd-list-item">Neutral</button>
-                        <button className="dd-list-item">Evil</button>
-                        <button className="dd-list-item">Pineapple</button>
+                        <button className="dd-list-item" onClick={handleAlignmentClick}>Good</button>
+                        <button className="dd-list-item" onClick={handleAlignmentClick}>Neutral</button>
+                        <button className="dd-list-item" onClick={handleAlignmentClick}>Evil</button>
+                        <button className="dd-list-item" onClick={handleAlignmentClick}>Pineapple</button>
                     </div>
                     <p>Choose your Weapon</p>
                     <div className="Weapon">
-                        <button className="dd-list-item">Mace</button>
-                        <button className="dd-list-item">Longsword</button>
-                        <button className="dd-list-item">Axe</button>
-                        <button className="dd-list-item">Longbow</button>
-                        <button className="dd-list-item">Pineapple</button>
+                        <button className="dd-list-item" onClick={handleWeaponClick}>Mace</button>
+                        <button className="dd-list-item" onClick={handleWeaponClick}>Longsword</button>
+                        <button className="dd-list-item" onClick={handleWeaponClick}>Axe</button>
+                        <button className="dd-list-item" onClick={handleWeaponClick}>Longbow</button>
+                        <button className="dd-list-item" onClick={handleWeaponClick}>Pineapple</button>
                     </div>
                 </div>
             </form>
