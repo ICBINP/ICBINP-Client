@@ -10,8 +10,8 @@ function ShowCharacters(props) {
         console.log(value.class)
         return(
             <div>
-                <h1>{value.characterName}</h1>
-                <h1>{value.class}</h1>
+                <h1 className='character-display' >{value.characterName}</h1>
+                <h2 className= 'character-display' >{value.class}</h2>
              </div>
              )
     })
