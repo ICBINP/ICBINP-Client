@@ -24,4 +24,4 @@ function ShowCharacters(props) {
     )
 }
 
-export default ShowCharacters
+export default ShowCharacters;
