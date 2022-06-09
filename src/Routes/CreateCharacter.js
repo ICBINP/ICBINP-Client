@@ -1,34 +1,69 @@
 import { useState } from "react"
+import axios from "axios"
 
 const CreateCharacter = (props) => {
-    const [newCharacter, setNewCharacter] = useState({characterName: ""})
+    const [newCharacter, setNewCharacter] = useState({})
+    const [newName, setNewName] = useState('')
+    let userId
+
+    console.log(props.user)
+
+    if (props.user._id) 
+    {userId = props.user._id
+    console.log(userId)}
+    
+
 
     const handleNameChange = (e) => {
-        setNewCharacter({characterName: e.target.value})
-        console.log(newCharacter.characterName)
+        e.preventDefault()
+        let newCopy = {...newCharacter}
+        console.log(newCopy)
+        setNewName(e.target.value)
+        newCopy.characterName = newName
+        setNewCharacter(newCopy)
     }
-
+    // console.log(newCharacter.characterName, newName)
+    
     const handleClassClick = (e) => {
-        setNewCharacter({class: e.target.innerText})
+        e.preventDefault()
+        let newCopy = {...newCharacter}
+        newCopy.class = e.target.innerText
+        setNewCharacter(newCopy)
         console.log(e)
     }
 
-
     const handleAlignmentClick = (e) => {
-        setNewCharacter({alignment: e.target.innerText})
+        e.preventDefault()
+        let newCopy = {...newCharacter}
+        newCopy.alignment = e.target.innerText
+        setNewCharacter(newCopy)
+    }
+    
+    const handleWeaponClick = (e) => {
+        e.preventDefault()
+        let newCopy = {...newCharacter}
+        newCopy.weapon = e.target.innerText
+        setNewCharacter(newCopy)
     }
 
-    const handleWeaponClick = (e) => {
-        setNewCharacter({weapon: e.target.innerText})
+    const handleMakeCharacter = (e) => {
+        e.preventDefault()
+        axios.post(`http://localhost:8080/characters`, {
+            newCharacter,
+            id: userId
+        }).then(res => {
+            console.log(res)
+            setNewCharacter({})})
     }
-    console.log(props.user)
+    console.log(newCharacter)
+
 
     return (
         <div>
             <p>Create</p>
 
             <form className="characterdd">
-                <input type='text' placeholder='Character Name' value={newCharacter.characterName} onChange={handleNameChange}/>
+                <input type='text' placeholder='Character Name' value={newName} onChange={handleNameChange}/>
                 <div className="dd-wrapper">
                     <div className="dd-header">
                      <div className="dd-header-title"></div>
@@ -48,7 +83,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Evil</button>
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Pineapple</button>
                     </div>
-                    <p>Choose your Weapon</p>
+                    <p classname='choose-weapon'>Choose your Weapon</p>
                     <div className="Weapon">
                         <button className="dd-list-item" onClick={handleWeaponClick}>Mace</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longsword</button>
@@ -56,6 +91,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longbow</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Pineapple</button>
                     </div>
+                    <button onClick={handleMakeCharacter} >Create Character!</button>
                 </div>
             </form>
 

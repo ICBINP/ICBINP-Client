@@ -6,7 +6,7 @@ const Login = (props) => {
 
     return (
         <section>
-            <h1>Welcome to Pinepple Kingdom</h1>
+            <h1>Welcome to Pineapple Kingdom</h1>
                 <input type='text' onChange={props.onChange[0]} placeholder='Enter New User Name' value={props.value[0]}/>
                 <button type='submit' onClick={props.onClick[0]}>Create New User</button>
                 <input type='text' onChange={props.onChange[1]} placeholder='User Name' value={props.value[1]}/>
