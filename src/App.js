@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Login from './Components/Login';
 import Home from './Routes/Home';
 import CreateCharacter from './Routes/CreateCharacter';
+import Scenario from './Routes/Scenario';
 import './App.css';
 import axios from 'axios';
 
@@ -46,6 +47,7 @@ function App() {
         <Route path='/home' element={<Home user={userInfo} />} />
         <Route path='/home/create' element={<CreateCharacter user={userInfo} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters userInfo={userInfo} />} />
+        <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
       </Routes>
 
     </div>
