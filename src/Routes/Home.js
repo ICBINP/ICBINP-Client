@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom"
+
+
 const Home = (props) => {
 
-    console.log(props)
+    console.log(props.user)
 
     return (
         <div>
             Home
-
+        <Link to="/home/showcharacters">Hello Pineapple</Link>
         </div>
     )
 
