@@ -13,6 +13,7 @@ const CreateCharacter = (props) => {
         console.log(e)
     }
 
+
     const handleAlignmentClick = (e) => {
         setNewCharacter({alignment: e.target.innerText})
     }
@@ -24,7 +25,7 @@ const CreateCharacter = (props) => {
 
     return (
         <div>
-            Create
+            <p>Create</p>
 
             <form className="characterdd">
                 <input type='text' placeholder='Character Name' value={newCharacter.characterName} onChange={handleNameChange}/>
