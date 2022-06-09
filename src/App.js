@@ -52,8 +52,8 @@ function App() {
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
       </Routes>
 
+      <div id="footerspacer"></div>
       <footer id="footer">
-        <img src="./assets/transparent-pineapple.png" alt="Pineapples Overlay" width="500" height="600"></img>
       </footer>
 
     </div>
