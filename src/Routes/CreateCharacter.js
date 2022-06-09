@@ -9,11 +9,11 @@ const CreateCharacter = () => {
     }
 
     const handleAlignmentClick = (e) => {
-        setNewCharacter({alignment: ""})
+        setNewCharacter({alignment: e.target.innerText})
     }
 
     const handleWeaponClick = (e) => {
-        setNewCharacter({weapon: ""})
+        setNewCharacter({weapon: e.target.innerText})
     }
 
     console.log(newCharacter)
@@ -31,7 +31,7 @@ const CreateCharacter = () => {
                     <div className="Class">
                         <button className="dd-list-item" onClick={handleClassClick}>Orc</button>
                         <button className="dd-list-item" onClick={handleClassClick}>Elf</button>
-                        <button className="dd-list-item" onClick={handleClassClick}>Dwarf</button>
+                        <button className="dd-list-item" onClick={handleClassClick}>Fighter</button>
                         <button className="dd-list-item" onClick={handleClassClick}>Wizard</button>
                         <button className="dd-list-item" onClick={handleClassClick}>Pineapple</button>
                     </div>
