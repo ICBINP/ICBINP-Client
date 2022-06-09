@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Login from './Components/Login';
 import Home from './Routes/Home';
 import CreateCharacter from './Routes/CreateCharacter';
+import Scenario from './Routes/Scenario';
 import './App.css';
 import axios from 'axios';
 import ShowCharacters from './Routes/ShowCharacters';
@@ -47,9 +48,16 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
+<<<<<<< HEAD
+        <Route path='/home' element={<Home user={userInfo} />} />
+        <Route path='/home/create' element={<CreateCharacter user={userInfo} />} />
+        <Route path='/home/showcharacters' element={<ShowCharacters userInfo={userInfo} />} />
+        <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
+=======
         <Route path='/home' element={<Home user={user} />} />
         <Route path='/home/create' element={<CreateCharacter user={user} characters={setUser} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
+>>>>>>> 29a4339fbf33a6e7c251c063ed274e8cd81df1bf
       </Routes>
 
       <div id="footerspacer"></div>
