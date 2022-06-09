@@ -1,10 +1,21 @@
 import { useState } from "react"
+import axios from "axios"
 
 const CreateCharacter = (props) => {
     const [newCharacter, setNewCharacter] = useState({})
     const [newName, setNewName] = useState('')
+    let userId
+
+    console.log(props.user)
+
+    if (props.user._id) 
+    {userId = props.user._id
+    console.log(userId)}
     
+
+
     const handleNameChange = (e) => {
+        e.preventDefault()
         let newCopy = {...newCharacter}
         console.log(newCopy)
         setNewName(e.target.value)
@@ -14,6 +25,7 @@ const CreateCharacter = (props) => {
     // console.log(newCharacter.characterName, newName)
     
     const handleClassClick = (e) => {
+        e.preventDefault()
         let newCopy = {...newCharacter}
         newCopy.class = e.target.innerText
         setNewCharacter(newCopy)
@@ -21,18 +33,28 @@ const CreateCharacter = (props) => {
     }
     
     const handleAlignmentClick = (e) => {
+        e.preventDefault()
         let newCopy = {...newCharacter}
         newCopy.alignment = e.target.innerText
         setNewCharacter(newCopy)
     }
     
     const handleWeaponClick = (e) => {
+        e.preventDefault()
         let newCopy = {...newCharacter}
         newCopy.weapon = e.target.innerText
         setNewCharacter(newCopy)
     }
 
-    // console.log(props.user)
+    const handleMakeCharacter = (e) => {
+        e.preventDefault()
+        axios.post(`http://localhost:8080/characters`, {
+            newCharacter,
+            id: userId
+        }).then(res => {
+            console.log(res)
+            setNewCharacter({})})
+    }
     console.log(newCharacter)
 
 
@@ -61,7 +83,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Evil</button>
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Pineapple</button>
                     </div>
-                    <p>Choose your Weapon</p>
+                    <p classname='choose-weapon'>Choose your Weapon</p>
                     <div className="Weapon">
                         <button className="dd-list-item" onClick={handleWeaponClick}>Mace</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longsword</button>
@@ -69,7 +91,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longbow</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Pineapple</button>
                     </div>
-                    <button onClick={props.ok} >{}</button>
+                    <button onClick={handleMakeCharacter} >Create Character!</button>
                 </div>
             </form>
 
