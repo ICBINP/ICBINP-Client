@@ -1,7 +1,12 @@
 import { useState } from "react"
 
-const CreateCharacter = () => {
-    const [newCharacter, setNewCharacter] = useState({})
+const CreateCharacter = (props) => {
+    const [newCharacter, setNewCharacter] = useState({characterName: ""})
+
+    const handleNameChange = (e) => {
+        setNewCharacter({characterName: e.target.value})
+        console.log(newCharacter.characterName)
+    }
 
     const handleClassClick = (e) => {
         setNewCharacter({class: e.target.innerText})
@@ -15,14 +20,14 @@ const CreateCharacter = () => {
     const handleWeaponClick = (e) => {
         setNewCharacter({weapon: e.target.innerText})
     }
+    console.log(props.user)
 
-    console.log(newCharacter)
     return (
         <div>
             Create
 
             <form className="characterdd">
-                <input type='text' placeholder='Character Name' />
+                <input type='text' placeholder='Character Name' value={newCharacter.characterName} onChange={handleNameChange}/>
                 <div className="dd-wrapper">
                     <div className="dd-header">
                      <div className="dd-header-title"></div>

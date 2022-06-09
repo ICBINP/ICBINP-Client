@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Home = (props) => {
 
-    console.log(props)
+    console.log(props.user)
 
     return (
         <div>

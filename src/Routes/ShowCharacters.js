@@ -3,8 +3,8 @@ import { Route, Routes, Link, Navigate} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 function ShowCharacters(props) {
-    let user = props.userInfo
-    console.log(user.data[0].userName)
+    let user = props.user
+    console.log(user)
 
     const characters = user.data[0].characters.map((value, index) => {
         console.log(value.class)
