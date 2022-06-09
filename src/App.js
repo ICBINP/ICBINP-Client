@@ -6,6 +6,7 @@ import Home from './Routes/Home';
 import CreateCharacter from './Routes/CreateCharacter';
 import './App.css';
 import axios from 'axios';
+import ShowCharacters from './Routes/ShowCharacters';
 
 function App() {
   const [newUserInfo, setNewUserInfo] = useState('')
@@ -47,6 +48,10 @@ function App() {
         <Route path='/home/create' element={<CreateCharacter user={userInfo} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters userInfo={userInfo} />} />
       </Routes>
+
+      <footer id="footer">
+        <img src="./assets/transparent-pineapple.png" alt="Pineapples Overlay" width="500" height="600"></img>
+      </footer>
 
     </div>
   );
