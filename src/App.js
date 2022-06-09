@@ -45,6 +45,7 @@ function App() {
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
         <Route path='/home' element={<Home user={userInfo} />} />
         <Route path='/home/create' element={<CreateCharacter user={userInfo} />} />
+        <Route path='/home/showcharacters' element={<ShowCharacters userInfo={userInfo} />} />
       </Routes>
 
     </div>
