@@ -48,16 +48,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
-<<<<<<< HEAD
-        <Route path='/home' element={<Home user={userInfo} />} />
-        <Route path='/home/create' element={<CreateCharacter user={userInfo} />} />
-        <Route path='/home/showcharacters' element={<ShowCharacters userInfo={userInfo} />} />
-        <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
-=======
         <Route path='/home' element={<Home user={user} />} />
         <Route path='/home/create' element={<CreateCharacter user={user} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
->>>>>>> 29a4339fbf33a6e7c251c063ed274e8cd81df1bf
+        <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
       </Routes>
 
       <div id="footerspacer"></div>
