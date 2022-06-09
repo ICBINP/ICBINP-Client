@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+
+
 const Home = (props) => {
 
     console.log(props)
@@ -5,7 +8,7 @@ const Home = (props) => {
     return (
         <div>
             Home
-
+        <Link to="/home/showcharacters">Hello Pineapple</Link>
         </div>
     )
 

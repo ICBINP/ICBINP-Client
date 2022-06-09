@@ -6,6 +6,7 @@ import Home from './Routes/Home';
 import CreateCharacter from './Routes/CreateCharacter';
 import './App.css';
 import axios from 'axios';
+import ShowCharacters from './Routes/ShowCharacters';
 
 function App() {
   const [newUserInfo, setNewUserInfo] = useState('')
