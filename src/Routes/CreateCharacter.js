@@ -1,33 +1,47 @@
 import { useState } from "react"
 
 const CreateCharacter = (props) => {
-    const [newCharacter, setNewCharacter] = useState({characterName: ""})
-
+    const [newCharacter, setNewCharacter] = useState({})
+    const [newName, setNewName] = useState('')
+    
     const handleNameChange = (e) => {
-        setNewCharacter({characterName: e.target.value})
-        console.log(newCharacter.characterName)
+        let newCopy = {...newCharacter}
+        console.log(newCopy)
+        setNewName(e.target.value)
+        newCopy.characterName = newName
+        setNewCharacter(newCopy)
     }
-
+    // console.log(newCharacter.characterName, newName)
+    
     const handleClassClick = (e) => {
-        setNewCharacter({class: e.target.innerText})
+        let newCopy = {...newCharacter}
+        newCopy.class = e.target.innerText
+        setNewCharacter(newCopy)
         console.log(e)
     }
-
+    
     const handleAlignmentClick = (e) => {
-        setNewCharacter({alignment: e.target.innerText})
+        let newCopy = {...newCharacter}
+        newCopy.alignment = e.target.innerText
+        setNewCharacter(newCopy)
+    }
+    
+    const handleWeaponClick = (e) => {
+        let newCopy = {...newCharacter}
+        newCopy.weapon = e.target.innerText
+        setNewCharacter(newCopy)
     }
 
-    const handleWeaponClick = (e) => {
-        setNewCharacter({weapon: e.target.innerText})
-    }
-    console.log(props.user)
+    // console.log(props.user)
+    console.log(newCharacter)
+
 
     return (
         <div>
             Create
 
             <form className="characterdd">
-                <input type='text' placeholder='Character Name' value={newCharacter.characterName} onChange={handleNameChange}/>
+                <input type='text' placeholder='Character Name' value={newName} onChange={handleNameChange}/>
                 <div className="dd-wrapper">
                     <div className="dd-header">
                      <div className="dd-header-title"></div>
@@ -55,6 +69,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longbow</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Pineapple</button>
                     </div>
+                    <button onClick={props.ok} >{}</button>
                 </div>
             </form>
 
