@@ -31,7 +31,7 @@ const CreateCharacter = (props) => {
         setNewCharacter(newCopy)
         console.log(e)
     }
-    
+
     const handleAlignmentClick = (e) => {
         e.preventDefault()
         let newCopy = {...newCharacter}
@@ -60,7 +60,7 @@ const CreateCharacter = (props) => {
 
     return (
         <div>
-            Create
+            <p>Create</p>
 
             <form className="characterdd">
                 <input type='text' placeholder='Character Name' value={newName} onChange={handleNameChange}/>
