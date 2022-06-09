@@ -48,7 +48,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
         <Route path='/home' element={<Home user={user} />} />
-        <Route path='/home/create' element={<CreateCharacter user={user} characters={setUser} />} />
+        <Route path='/home/create' element={<CreateCharacter user={user} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
       </Routes>
 
