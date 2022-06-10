@@ -19,6 +19,7 @@ function App() {
 
 
   const handleNewChange = (e) => {
+    console.log(newUserInfo)
     setNewUserInfo(e.target.value)
   }
 
@@ -42,7 +43,7 @@ function App() {
   const handleSubmitLogin = (e) => {
     e.preventDefault()
     axios.get(`http://localhost:8080/users/${userInfo}`).then(res => {
-      setUser(res)
+      setUser(res.data[0])
     }).then(() => {
       setUserInfo('')
       navigate('/home')})
@@ -53,7 +54,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
         <Route path='/home' element={<Home user={user} />} />
-        <Route path='/home/create' element={<CreateCharacter user={user} />} />
+        <Route path='/home/create' element={<CreateCharacter setUser={setUser} user={user} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
         <Route path='/home/scenario' element={<Scenario userInfo={user} />} />
       </Routes>
