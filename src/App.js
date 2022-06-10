@@ -32,7 +32,7 @@ function App() {
     e.preventDefault()
     axios.post('https://desolate-citadel-75864.herokuapp.com/users',
       {
-        userName: newUserInfo
+        userName: newUserInfo.toLowerCase()
       })
     .then(res => {
       setNewUserInfo("")
@@ -43,7 +43,12 @@ function App() {
 
   const handleSubmitLogin = (e) => {
     e.preventDefault()
+<<<<<<< HEAD
     axios.get(`https://desolate-citadel-75864.herokuapp.com/users/${userInfo}`).then(res => {
+=======
+    axios.get(`http://localhost:8080/users/${userInfo}`).then(res => {
+      console.log(res)
+>>>>>>> 9a525db7c4067bb53792fe684c2733772da7e2a1
       setUser(res.data[0])
     }).then(() => {
       setUserInfo('')

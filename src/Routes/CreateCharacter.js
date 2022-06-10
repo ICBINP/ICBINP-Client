@@ -24,7 +24,7 @@ const CreateCharacter = (props) => {
         newCopy.characterName = newName
         setNewCharacter(newCopy)
     }
-    // console.log(newCharacter.characterName, newName)
+
     
     const handleClassClick = (e) => {
         e.preventDefault()
