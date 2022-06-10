@@ -9,7 +9,7 @@ function ShowCharacters(props) {
     console.log(user)
 
     let Character = (index) => {
-        setCurrentCharacter(user.data[0].characters[index])
+        setCurrentCharacter(user.characters[index])
         console.log(currentCharacter)
     }
 
@@ -17,13 +17,15 @@ function ShowCharacters(props) {
 
     let characters
 
-    if (user.data.length > 0 && user.data[0].characters.length > 0) {
-        characters = user.data[0].characters.map((value, index) => {
+    if (user.characters.length > 0) {
+        characters = user.characters.map((value, index) => {
 
             return(
                 <div key={index}>
                     <h1 className='character-display' >{value.characterName}</h1>
-                    <h2 className= 'character-display' >{value.class}</h2>
+                    <h3 className='character-display'>{value.class}</h3>
+                    <h3 className= 'character-display' >{value.weapon}</h3>
+                    <h3 className='character-display' >{value.alignment}</h3>
 
                     <button onClick={()=> {Character(index)}}>Want {value.characterName}?</button>
 
