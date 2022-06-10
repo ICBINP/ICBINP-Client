@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ICBINP-Client/static/css/main.a6dc6f14.css",
+    "main.js": "/ICBINP-Client/static/js/main.66e34af8.js",
+    "static/js/787.710411ee.chunk.js": "/ICBINP-Client/static/js/787.710411ee.chunk.js",
+    "static/media/transparent-pineapple.png": "/ICBINP-Client/static/media/transparent-pineapple.78ce0708c98797189d9c.png",
+    "index.html": "/ICBINP-Client/index.html",
+    "main.a6dc6f14.css.map": "/ICBINP-Client/static/css/main.a6dc6f14.css.map",
+    "main.66e34af8.js.map": "/ICBINP-Client/static/js/main.66e34af8.js.map",
+    "787.710411ee.chunk.js.map": "/ICBINP-Client/static/js/787.710411ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6dc6f14.css",
+    "static/js/main.66e34af8.js"
+  ]
+}
