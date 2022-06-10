@@ -23,7 +23,9 @@ function ShowCharacters(props) {
             return(
                 <div key={index}>
                     <h1 className='character-display' >{value.characterName}</h1>
-                    <h2 className= 'character-display' >{value.class}</h2>
+                    <h3 className='character-display'>{value.class}</h3>
+                    <h3 className= 'character-display' >{value.weapon}</h3>
+                    <h3 className='character-display' >{value.alignment}</h3>
 
                     <button onClick={()=> {Character(index)}}>Want {value.characterName}?</button>
 
