@@ -1,9 +1,11 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 
 const CreateCharacter = (props) => {
     const [newCharacter, setNewCharacter] = useState({})
     const [newName, setNewName] = useState('')
+    const navigate = useNavigate()
     let userId
 
     console.log(props.user)
@@ -53,7 +55,8 @@ const CreateCharacter = (props) => {
             id: userId
         }).then(res => {
             console.log(res)
-            setNewCharacter({})})
+            setNewCharacter({})
+            navigate('/home')})
     }
     console.log(newCharacter)
 
