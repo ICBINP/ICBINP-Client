@@ -14,7 +14,7 @@ function Scenario(props) {
     let Scenario = ""
 
     if(choices === "Begin") {
-        Scenario = "Hello " + user.currentCharacter.characterName + ", you are a " + user.currentCharacter.class + " and your level is 1. As you are walking down a road that has a mysterious amount of pineapple growing from th ground... Suddenly, you see a massive 2 story tall pineapple. What do you do? "
+        Scenario = "Hello " + user.currentCharacter.characterName + ", you are an " + user.currentCharacter.class + " and your level is 1. As you are walking down a road that has a mysterious amount of pineapple growing from the ground, you suddenly see a massive 2 story tall pineapple. What do you do? "
     }
 
 
