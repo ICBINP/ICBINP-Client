@@ -8,6 +8,7 @@ import Scenario from './Routes/Scenario';
 import './App.css';
 import axios from 'axios';
 import ShowCharacters from './Routes/ShowCharacters';
+import img from "./assets/transparent-pineapple.png"
 
 function App() {
   const [newUserInfo, setNewUserInfo] = useState('')
@@ -54,12 +55,14 @@ function App() {
         <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
       </Routes>
 
-      <div id="footerspacer"></div>
-      <footer id="footer">
-      </footer>
+      <img src={img} />
 
     </div>
   );
 }
 
 export default App;
+
+/*<div id="footerspacer"></div>
+<footer id="footer">
+</footer>*/
