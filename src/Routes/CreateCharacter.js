@@ -18,9 +18,9 @@ const CreateCharacter = (props) => {
 
     const handleNameChange = (e) => {
         e.preventDefault()
+        setNewName(e.target.value)
         let newCopy = {...newCharacter}
         console.log(newCopy)
-        setNewName(e.target.value)
         newCopy.characterName = newName
         setNewCharacter(newCopy)
     }
