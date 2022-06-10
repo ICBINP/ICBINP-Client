@@ -8,6 +8,7 @@ import Scenario from './Routes/Scenario';
 import './App.css';
 import axios from 'axios';
 import ShowCharacters from './Routes/ShowCharacters';
+
 import img from './assets/transparent-pineapple.png';
 
 function App() {
@@ -42,7 +43,9 @@ function App() {
     e.preventDefault()
     axios.get(`http://localhost:8080/users/${userInfo}`).then(res => {
       setUser(res)
-    }).then(() => navigate('/home'))
+    }).then(() => {
+      setUserInfo('')
+      navigate('/home')})
   }
 
   return (
@@ -52,15 +55,17 @@ function App() {
         <Route path='/home' element={<Home user={user} />} />
         <Route path='/home/create' element={<CreateCharacter user={user} />} />
         <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
-        <Route path='/home/scenario' element={<Scenario userInfo={userInfo} />} />
+        <Route path='/home/scenario' element={<Scenario userInfo={user} />} />
       </Routes>
 
-      <div id="footerspacer"></div>
-      <footer id="footer">
-      </footer>
+      <img src={img} />
 
     </div>
   );
 }
 
 export default App;
+
+/*<div id="footerspacer"></div>
+<footer id="footer">
+</footer>*/

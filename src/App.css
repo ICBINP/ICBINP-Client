@@ -2,9 +2,18 @@
 
 .App {
   text-align: center;
+  background: cover;
+  min-width: 100%;
+  /* z-index: -1; */
+  top: 0; 
+  left: 0;
+  /*background-image: url('https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg');*/
 }
+
 body {
-  background-image: url("https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg");
+  background-image: url('https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg');
+  /*background-size: 100%;*/
+  background-size: cover;
 }
 
 * {
