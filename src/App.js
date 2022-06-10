@@ -8,7 +8,8 @@ import Scenario from './Routes/Scenario';
 import './App.css';
 import axios from 'axios';
 import ShowCharacters from './Routes/ShowCharacters';
-import img from "./assets/transparent-pineapple.png"
+
+import img from './assets/transparent-pineapple.png';
 
 function App() {
   const [newUserInfo, setNewUserInfo] = useState('')

@@ -94,7 +94,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longbow</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Pineapple</button>
                     </div>
-                    <button onClick={handleMakeCharacter} >Create Character!</button>
+                    <button onClick={handleMakeCharacter} id="createCharacterButton">Create Character!</button>
                 </div>
             </form>
 

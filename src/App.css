@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
-/* Make sure to make create user and login one on top of the other */
-
 .App {
   text-align: center;
   background: cover;
@@ -21,12 +19,9 @@ body {
 * {
   font-family: 'Cinzel Decorative';
   font-weight: 900;
-  
   color: white;
-  ;
 }
 
-/* input[type=text]*/
   input {
   width: 100%;
   padding: 12px 20px;
@@ -60,28 +55,44 @@ button:hover {
   color:black;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.35), 0 17px 50px 0 rgba(0,0,0,0.30);
 }
+#createCharacterButton {
+  background-color: #005C32;
+  margin-top: 20px;
+}
+
+#createCharacterButton:hover {
+  background-color: #005C32;
+  background-color: #D3AF5E; 
+  color:black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.35), 0 17px 50px 0 rgba(0,0,0,0.30);
+  margin-top: 20px;
+}
+
+h1, h2, p {
+  text-shadow: 2px 2px #000;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  font-size: larger;
+}
 
 #footerspacer {
   height: 15vh;
 }
-h1 {
-  font-size: 30px;
-  text-shadow: 2px 2px #000;
-}
-p {
-  font-size: larger;
-  text-shadow: 2px 2px #000;
-}
+
 #footer {
-  /*background-image: url("/src/assets/transparent-pineapple.png");*/
-  background-size: 100vw;
+  background-image: url("assets/transparent-pineapple.png");
+  background-size: 50vw;
   background-position: bottom;
-  max-height: 25vh;
-  /* z-index: 1; */
+  max-height: 15vh; 
+  z-index: 1;
   position: fixed;
   bottom: 0;
-  height: 25vh;
-  width: 100vw;
+  height: 15vh;
+  width: 50vw;
   object-fit: contain;
-  /* mess around with contain and cover */
 }
