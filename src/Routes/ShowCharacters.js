@@ -7,11 +7,11 @@ function ShowCharacters(props) {
     console.log(user)
 
     let characters
-    if (user.data[0].characters.length > 0) {
+    if (user.data.length > 0 && user.data[0].characters.length > 0) {
         characters = user.data[0].characters.map((value, index) => {
             console.log(value.class)
             return(
-                <div>
+                <div key={index}>
                     <h1 className='character-display' >{value.characterName}</h1>
                     <h2 className= 'character-display' >{value.class}</h2>
                  </div>
@@ -19,7 +19,7 @@ function ShowCharacters(props) {
         })
     } else {
         return (
-            <h2>You don't have any characters yet Create some and let's go!</h2>
+            <Link to='/home/create'><button><h2>You don't have any characters yet Create some!</h2></button></Link>
         )
     }
 
@@ -27,6 +27,7 @@ function ShowCharacters(props) {
     return(
         <div>
         {characters}
+        <Link to='/home/scenario'><h2>Adventure!</h2></Link>
         </div>
     )
 }

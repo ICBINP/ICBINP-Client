@@ -86,7 +86,7 @@ const CreateCharacter = (props) => {
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Evil</button>
                         <button className="dd-list-item" onClick={handleAlignmentClick}>Pineapple</button>
                     </div>
-                    <p classname='choose-weapon'>Choose your Weapon</p>
+                    <p className='choose-weapon'>Choose your Weapon</p>
                     <div className="Weapon">
                         <button className="dd-list-item" onClick={handleWeaponClick}>Mace</button>
                         <button className="dd-list-item" onClick={handleWeaponClick}>Longsword</button>
