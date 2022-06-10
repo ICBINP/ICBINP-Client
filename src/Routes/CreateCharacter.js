@@ -56,6 +56,7 @@ const CreateCharacter = (props) => {
         }).then(res => {
             console.log(res)
             setNewCharacter({})
+            props.setUser(res.data)
             navigate('/home')})
     }
     console.log(newCharacter)
