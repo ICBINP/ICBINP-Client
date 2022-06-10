@@ -50,7 +50,7 @@ const CreateCharacter = (props) => {
 
     const handleMakeCharacter = (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:8080/characters`, {
+        axios.post(`https://desolate-citadel-75864.herokuapp.com/characters`, {
             newCharacter,
             id: userId
         }).then(res => {

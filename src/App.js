@@ -30,7 +30,7 @@ function App() {
 
   const handleSubmitNew = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:8080/users',
+    axios.post('https://desolate-citadel-75864.herokuapp.com/users',
       {
         userName: newUserInfo
       })
@@ -43,7 +43,7 @@ function App() {
 
   const handleSubmitLogin = (e) => {
     e.preventDefault()
-    axios.get(`http://localhost:8080/users/${userInfo}`).then(res => {
+    axios.get(`https://desolate-citadel-75864.herokuapp.com/users/${userInfo}`).then(res => {
       setUser(res.data[0])
     }).then(() => {
       setUserInfo('')
