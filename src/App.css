@@ -9,7 +9,13 @@
   /* z-index: -1; */
   top: 0; 
   left: 0;
+  /*background-image: url('https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg');*/
+}
+
+body {
   background-image: url('https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg');
+  /*background-size: 100%;*/
+  background-size: cover;
 }
 
 * {
@@ -67,7 +73,7 @@ p {
   text-shadow: 2px 2px #000;
 }
 #footer {
-  background-image: url("/src/assets/transparent-pineapple.png");
+  /*background-image: url("/src/assets/transparent-pineapple.png");*/
   background-size: 100vw;
   background-position: bottom;
   max-height: 25vh;
