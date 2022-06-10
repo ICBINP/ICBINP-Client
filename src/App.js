@@ -15,6 +15,7 @@ function App() {
   const [newUserInfo, setNewUserInfo] = useState('')
   const [userInfo, setUserInfo] = useState('')
   const [user, setUser] = useState()
+  let [currentCharacter, setCurrentCharacter] = useState({})
   const navigate = useNavigate()
 
 
@@ -55,8 +56,8 @@ function App() {
         <Route path='/'  element={<Login value={[newUserInfo, userInfo]} onClick={[handleSubmitNew, handleSubmitLogin]} onChange={[handleNewChange, handleChange]} />}/>
         <Route path='/home' element={<Home user={user} />} />
         <Route path='/home/create' element={<CreateCharacter setUser={setUser} user={user} />} />
-        <Route path='/home/showcharacters' element={<ShowCharacters user={user} />} />
-        <Route path='/home/scenario' element={<Scenario userInfo={user} />} />
+        <Route path='/home/showcharacters' element={<ShowCharacters user={user} currentCharacter={currentCharacter} setCurrentCharacter={setCurrentCharacter} />} />
+        <Route path='/home/scenario' element={<Scenario userInfo={user} currentCharacter={currentCharacter} />} />
       </Routes>
 
       <img src={img} />
