@@ -32,7 +32,7 @@ function App() {
     e.preventDefault()
     axios.post('http://localhost:8080/users',
       {
-        userName: newUserInfo
+        userName: newUserInfo.toLowerCase()
       })
     .then(res => {
       setNewUserInfo("")
@@ -44,6 +44,7 @@ function App() {
   const handleSubmitLogin = (e) => {
     e.preventDefault()
     axios.get(`http://localhost:8080/users/${userInfo}`).then(res => {
+      console.log(res)
       setUser(res.data[0])
     }).then(() => {
       setUserInfo('')

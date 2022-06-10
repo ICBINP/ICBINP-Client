@@ -3,6 +3,7 @@ import { Route, Routes, Link, Navigate} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 function Scenario(props) {
+    console.log(props)
 
     let user = props.userInfo.data[0]
     
